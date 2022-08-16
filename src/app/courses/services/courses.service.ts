@@ -25,4 +25,10 @@ export class CoursesService {
       tap(courses => console.log(courses))
     );
   }
+
+  //post
+  // o pipe(first()) não é necessário
+  save(record: Course) {
+   return this.httpClient.post<Course>(this.API, record).pipe(first());
+  }
 }
