@@ -28,7 +28,7 @@ export class CoursesService {
 
   //post
   // o pipe(first()) não é necessário
-  save(record: Course) {
+  save(record: Partial<Course>) {
    return this.httpClient.post<Course>(this.API, record).pipe(first());
   }
 }
